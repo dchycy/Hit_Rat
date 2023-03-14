@@ -1,0 +1,86 @@
+<Label>:
+    font_size: 20
+    size_hint: 0.1, 0.06
+    color:1,0,0,1
+
+<TextInput>
+    font_size:20
+    size_hint: 0.4, 0.06
+
+<MainWindow>:
+    name: "Main"
+
+    Button:
+        background_normal: "1.png"
+        background_down: "1.png"
+        size_hint: 1, 1
+
+    Button:
+        background_normal: "start.png"
+        background_down: "startdown.png"
+        pos_hint: {"right":0.57, "top":0.25}
+        size_hint: 0.15, 0.09
+        on_release:
+            app.root.current = "Second"
+            root.manager.transition.direction = "left"
+
+<SecondWindow>:
+    name: "Second"
+    time60: time60
+    hammer: hammer
+    quitbtn: quitbtn
+    startbtn: startbtn
+    fmy: fmy
+
+    Button:
+        size_hint: 1, 1
+        background_normal: "2.png"
+        background_down: "2.png"
+
+    Label:
+        font_size: 30
+        pos_hint: {"right":0.92, "top":0.9}
+        text: "Score:"
+
+    Label:
+        id: score
+        font_size: 30
+        pos_hint: {"right":1, "top":0.9}
+        text: "0"
+
+    Label:
+        font_size: 30
+        pos_hint: {"right":0.13, "top":0.9}
+        text: "Time:"
+
+    Label:
+        id: time60
+        font_size: 30
+        pos_hint: {"right":0.2, "top":0.9}
+        text: "60"
+
+    Button:
+        id: quitbtn
+        background_normal: "Quit.png"
+        background_down: "Quit.png"
+        pos_hint: {"right":0.45, "top":0.96}
+        size_hint: 0.15, 0.11
+
+    Button:
+        id: startbtn
+        background_normal: "startbtn.png"
+        background_down: "startbtn.png"
+        pos_hint: {"right":0.7, "top":0.96}
+        size_hint: 0.2, 0.11
+
+    AsyncImage:
+        id: fmy
+        size_hint: 0.2, 0.2
+        source: 'fmy.png'
+        hide: False
+
+    Button:
+        id: hammer
+        size_hint: 0.1, 0.2
+        background_normal: 'hammer.png'
+
